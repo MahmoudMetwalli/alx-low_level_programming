@@ -8,10 +8,9 @@
  */
 int main(void)
 {
-	char a;
+	int a;
 
 	for (a = 0; a < 10; a++)
-		putchar(a);
-	putchar('\n');
+		printf("%d\n", a);
 	return (0);
 }
