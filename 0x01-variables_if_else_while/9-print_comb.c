@@ -14,7 +14,7 @@ int main(void)
 	{
 		putchar('0' + a);
 		if (a <= 8)
-		{	
+		{
 			putchar(44);
 			putchar(32);
 		}
