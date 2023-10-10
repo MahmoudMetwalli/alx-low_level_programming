@@ -8,6 +8,11 @@
  */
 int main(void)
 {
-	_putchar('_putchar');
+	char putchAR[] = "_putchar";
+	int n;
+	
+	for (n = 0; n <= 7; n++)
+		_putchar(putchAR[n]);
+	_putchar('\n');
 	return (0);
 }
