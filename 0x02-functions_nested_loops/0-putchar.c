@@ -8,12 +8,11 @@ int main(void)
 {
 	char putChar[] = "_putchar";
 	int n;
-	
+
 	for (n = 0; n <= 7; n++)
 	{
 		putchar(putChar[n]);
-	}
-	
+	}	
 	putchar('\n');
 	return (0);
 }
