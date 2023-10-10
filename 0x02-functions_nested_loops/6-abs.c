@@ -8,7 +8,7 @@
  */
 int _abs(int a)
 {
-	int b; b = a - 2*a
+	int b; b = a - 2*a;
 
 	if (a > 0)
 	{
