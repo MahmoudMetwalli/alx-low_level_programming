@@ -2,17 +2,17 @@
 #include "main.h"
 
 /**
- * print_alphabet - Entry point
+ * print_alphabet - prints the english alphabet from a-z
  * Return: Always 0 (Success)
  */
+
 void print_alphabet(void)
 {
-	char a;
+	char c;
 
-	for (a = 'a';a <= 'z'; a++)
+	for (c = 'a'; c <= 'z'; c++)
 	{
-		_putchar(a);
+		_putchar(c);
 	}
 	_putchar('\n');
-	return (0);
 }
