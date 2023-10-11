@@ -7,7 +7,7 @@
 
 int main(void)
 {
-	int theL = 1024;
+	int L = 1024;
 	int S = 0;
 	int n;
 
