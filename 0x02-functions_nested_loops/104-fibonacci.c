@@ -41,7 +41,7 @@ int theFirst98Fibonacci(void)
 	while (ct <= 98)
 	{
 		carry = (ct1Tds + ct2Tds) / 1000;
-		ntTds = (ct1Tds + ct2Tds) - carry * 1000;
+		nTds = (ct1Tds + ct2Tds) - carry * 1000;
 		next = (ct1 + ct2) + carry;
 		ct1Tds = ct2Tds;
 		ct2Tds = nTds;
