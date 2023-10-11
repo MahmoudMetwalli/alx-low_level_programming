@@ -20,7 +20,7 @@ int theFirst98Fibonacci(void)
 	int ct;
 	unsigned long ct1, ct2, next, ct1Tds,
 	ct2Tds, nTds, carry;
-	
+
 	ct = 0;
 	ct1 = 0;
 	ct2 = 1;
