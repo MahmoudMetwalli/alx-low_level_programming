@@ -1,4 +1,4 @@
-#include <stdioh>
+#include <stdio.h>
 
 /**
  * main - Write a function that prints the n times table,
