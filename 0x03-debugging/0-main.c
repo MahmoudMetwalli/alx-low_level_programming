@@ -1,6 +1,5 @@
 #include "main.h"
 
-
 /**
 * main - test neg or pos
 * Return: Always 0
