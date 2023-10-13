@@ -2,7 +2,7 @@
 
 /**
  * main - find and prints larget prime factor
- * Return: Always 0 
+ * Return: Always 0
  */
 
 int main(void)
