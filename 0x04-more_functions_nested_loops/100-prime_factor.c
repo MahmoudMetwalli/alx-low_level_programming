@@ -1,29 +1,31 @@
 #include <stdio.h>
+
 /**
- * main - finds and print largest prime factor
- * Return: Always 0
+ * main - find and prints larget prime factor
+ * Return: Always 0 
  */
 
 int main(void)
 {
-	long n = 612852475143;
-	int i;
+	long number = 612852475143;
+	int increment;
 
-	while (i++ < number / 2)
+	while (increment++ < number / 2)
 	{
-		if (n % i == 0)
+		if (number % increment == 0)
 		{
-			n /= 2;
+			number /= 2;
 			continue;
 		}
-		for (i = 3; i < n / 2; i += 2)
+
+		for (increment = 3; increment < number / 2; increment += 2)
 		{
-			if (n % i == 0)
+			if (number % increment == 0)
 			{
-				n /= i;
+				number /= increment;
 			}
 		}
 	}
-	printf("%ld\n", n);
+	printf("%ld\n", number);
 	return (0);
 }
