@@ -16,8 +16,8 @@ void puts_half(char *str)
 	}
 	if ((n % 2) == 0)
 	{
-		b = 0;
-		while (b <= (n/2))
+		b = n / 2;
+		while (b < n)
 		{
 			_putchar(*(str + b));
 			b++;
@@ -25,8 +25,8 @@ void puts_half(char *str)
 	}
 	else
 	{
-		b = 0;
-		while (b <= ((n - 1)/2))
+		b = (n - 1) / 2;
+		while (b < n)
 		{
 			_putchar(*(str + b));
 			b++;
