@@ -17,26 +17,12 @@ void rev_string(char *s)
 	l = b;
 	j = l - 1;
 	i = 0;
-	if ((j % 2) == 0)
+	while (i < j)
 	{
-		while (i < j)
-		{
-			t = *(s + i);
-			*(s + i) = *(s + j);
-			*(s + j) = t;
-			i++;
-			j--;
-		}
-	}
-	else
-	{
-		while (i != j)
-		{
-			t = *(s + i);
-			*(s + i) = *(s + j);
-			*(s + j) = t;
-			i++;
-			j--;
-		}
+		t = *(s + i);
+		*(s + i) = *(s + j);
+		*(s + j) = t;
+		i++;
+		j--;
 	}
 }
