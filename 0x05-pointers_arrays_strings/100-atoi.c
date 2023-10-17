@@ -8,7 +8,7 @@
  */
 int _atoi(char *s)
 {
-	int b, a, num, min, result;
+	int b, a, num, min, result, digit;
 
 	b = 0;
 	while (*(s + b) != '\0')
@@ -17,17 +17,19 @@ int _atoi(char *s)
 	}
 	num = 0;
 	min = 1;
+	digit = 0;
 	for (a = 0; a < b; a++)
 	{
 		if (*(s + a) == 45)
 		{
 			min = min * -1;
 		}
-		if ((*(s + a) >= 48) && (*(s + a) <= 57))
+		else if ((*(s + a) >= 48) && (*(s + a) <= 57))
 		{
 			num = num * 10 + (*(s + a) - 48);
+			digit = 1;
 		}
-		else
+		else if (digit)
 		{
 			break;
 		}
