@@ -9,8 +9,8 @@
 int _atoi(char *s)
 {
 	int b, a, min, digit;
-	int64_t num = 0;
-	int64_t result;
+	int num = 0;
+	int result;
 
 	b = 0;
 	while (*(s + b) != '\0')
