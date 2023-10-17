@@ -9,13 +9,14 @@
 int _atoi(char *s)
 {
 	int b, a, min, digit;
-	long long int num, result;
+	int64_t num = 0;
+	int64_t result;
+
 	b = 0;
 	while (*(s + b) != '\0')
 	{
 		b++;
 	}
-	num = 0;
 	min = 1;
 	digit = 0;
 	for (a = 0; a < b; a++)
