@@ -16,9 +16,10 @@ int _atoi(char *s)
 		b++;
 	}
 	a = 0;
+	num = 0;
 	while (a < b)
 	{
-		num = num *10 + (*(s + a) - 48);
+		num = num * 10 + (*(s + a) - 48);
 		a++;
 	}
 	return (num);
