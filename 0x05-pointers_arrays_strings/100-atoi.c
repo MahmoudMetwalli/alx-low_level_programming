@@ -27,8 +27,10 @@ int _atoi(char *s)
 		{
 			num = num * 10 + (*(s + a) - 48);
 		}
-		else if
+		else
+		{
 			break;
+		}
 	}
 	result = num * min;
 	return (result);
