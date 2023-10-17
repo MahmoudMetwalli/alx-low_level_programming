@@ -24,6 +24,7 @@ int _atoi(char *s)
 		}
 	}
 	for (a = 0;a < b; a++)
+	}
 		while (*(s + a) == 45)
 		{
 			num = num * -1;
