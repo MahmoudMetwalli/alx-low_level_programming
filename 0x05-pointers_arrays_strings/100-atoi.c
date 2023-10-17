@@ -8,8 +8,8 @@
  */
 int _atoi(char *s)
 {
-	int b, a, num, min, result, digit;
-
+	int b, a, min, digit;
+	int64_t num, result;
 	b = 0;
 	while (*(s + b) != '\0')
 	{
