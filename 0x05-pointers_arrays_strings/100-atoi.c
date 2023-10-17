@@ -9,7 +9,7 @@
 int _atoi(char *s)
 {
 	int b, a, min, digit;
-	int64_t num, result;
+	long long int num, result;
 	b = 0;
 	while (*(s + b) != '\0')
 	{
