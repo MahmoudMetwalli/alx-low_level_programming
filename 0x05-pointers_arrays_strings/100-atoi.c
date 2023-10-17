@@ -19,7 +19,14 @@ int _atoi(char *s)
 	num = 0;
 	while (a < b)
 	{
-		num = num * 10 + (*(s + a) - 48);
+		if ((*(s + a) >= 48) && (*(s + a) <= 57))
+		{
+			num = num * 10 + (*(s + a) - 48);
+		}
+		else if (*(s + a) == 45)
+		{
+			num = num * -1;
+		}
 		a++;
 	}
 	return (num);
