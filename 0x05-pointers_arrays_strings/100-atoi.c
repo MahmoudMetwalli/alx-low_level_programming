@@ -15,19 +15,19 @@ int _atoi(char *s)
 	{
 		b++;
 	}
-	a = 0;
 	num = 0;
-	while (a < b)
+	for (a = 0; a < b; a++)
 	{
-		if ((*(s + a) >= 48) && (*(s + a) <= 57))
+		while ((*(s + a) >= 48) && (*(s + a) <= 57))
 		{
 			num = num * 10 + (*(s + a) - 48);
 		}
-		else if (*(s + a) == 45)
+	}
+	for (a = 0;a < b; a++)
+		while (*(s + a) == 45)
 		{
 			num = num * -1;
 		}
-		a++;
 	}
 	return (num);
 }
