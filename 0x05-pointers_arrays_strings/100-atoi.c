@@ -8,7 +8,7 @@
  */
 int _atoi(char *s)
 {
-	int b, a, num, min, resut;
+	int b, a, num, min, result;
 
 	b = 0;
 	while (*(s + b) != '\0')
@@ -28,6 +28,6 @@ int _atoi(char *s)
 			num = num * 10 + (*(s + a) - 48);
 		}
 	}
-	result = num * min
+	result = num * min;
 	return (result);
 }
