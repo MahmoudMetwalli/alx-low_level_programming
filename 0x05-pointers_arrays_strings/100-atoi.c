@@ -8,7 +8,7 @@
  */
 int _atoi(char *s)
 {
-	int b, a;
+	int b, a, num;
 
 	b = 0;
 	while (*(s + b) != '\0')
@@ -16,15 +16,10 @@ int _atoi(char *s)
 		b++;
 	}
 	a = 0;
-	if (*s = 45)
-	{
-		*s = -;
-	}
 	while (a < b)
 	{
-		*(s + a)=(*(s + a) - 48);
+		num = num *10 + (*(s + a) - 48);
 		a++;
 	}
-	*(s + b)='';
-	return (*s);
+	return (num);
 }
