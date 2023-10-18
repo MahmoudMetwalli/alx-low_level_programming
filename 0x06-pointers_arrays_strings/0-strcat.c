@@ -9,7 +9,7 @@
  */
 char *_strcat(char *dest, char *src)
 {
-	int a, b, c;
+	size_t a, b;
 
 	a = 0;
 	while (*(dest + a) != '\0')
@@ -19,23 +19,9 @@ char *_strcat(char *dest, char *src)
 	b = 0;
 	while (*(src + b) != '\0')
 	{
+		*(dest + (a + b)) = *(src + b);
 		b++;
 	}
-	c = a + b - 1;
-	char e[c];
-
-	f = 0;
-	while (f < a)
-	{
-		*(e + f) = *(dest + f);
-		f++;
-	}
-	g = 0;
-	while (f <= c)
-	{
-		*(e + f) = *(src + g);
-		f++;
-		g++;
-	}
-	return (*e);
+	*(dest + (a + b)) = '\0';
+	return dest;
 }
