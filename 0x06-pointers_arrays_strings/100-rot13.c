@@ -15,7 +15,7 @@ char *rot13(char *a)
 	for (d = 0; a[d] != '\0'; d++)
 	{
 		e = 0;
-		while (e < 52)
+		while (e < 53)
 		{
 			if (a[d] == b[e])
 			{
