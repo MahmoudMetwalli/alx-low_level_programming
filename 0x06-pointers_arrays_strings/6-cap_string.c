@@ -20,18 +20,17 @@ char *cap_string(char *a)
 	{
 		a[0] = a[0] - 32;
 	}
-	for (b = 1; b < c; b++)
+	for (b = 0; b < c; b++)
 	{
 		d = 0;
-		while (d <= 12)
+		while (d < 13)
 		{
 			if ((a[b] == e[d]) && ((a[(b + 1)] >= 97 && a[(b + 1)] <= 122)))
 			{
 				a[(b + 1)] = a[(b + 1)] - 32;
 			}
 			d++;
-		}
-		b++;
+		}	
 	}
 	return (a);
 }
