@@ -14,15 +14,13 @@ char *rot13(char *a)
 
 	for (d = 0; a[d] != '\0'; d++)
 	{
-		e = 0;
-		while (e < 52)
+		for (e = 0; e < 52; e++ )
 		{
 			if (a[d] == b[e])
 			{
 				b[e] = c[e];
 				break;
 			}
-			e++;
 		}
 	}
 	return (a);
