@@ -15,12 +15,12 @@ char *rot13(char *a)
 	for (d = 0; a[d] != '\0'; d++)
 	{
 		e = 0;
-		while (b[e] != '\0' || c[e] != '\0')
+		while (e < 52)
 		{
 			if (a[d] == b[e])
 			{
-				b[e] = c[e];
-			}
+				a[d] = c[e];
+			}	
 			e++;
 		}
 	}
