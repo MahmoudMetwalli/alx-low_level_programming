@@ -7,31 +7,30 @@
  */
 void print_number(int n)
 {
-	if (n < 0)
+	int k, m;
+
+	if (n == 0)
 	{
-		n = n * -1;
-		_putchar('-');
+		_putchar('0');
 	}
-	if (n >= 1000)
+	else
 	{
-		_putchar((n / 1000) + '0');
-		_putchar(((n / 100) % 10) + '0');
-		_putchar(((n / 10) % 10) + '0');
-		_putchar((n % 10) + '0');
-	}
-	else if (n >= 100)
-	{
-		_putchar((n / 100) + '0');
-		_putchar(((n / 10) % 10) + '0');
-		_putchar((n % 10) + '0');
-	}
-	else if (n >= 10)
-	{
-		_putchar((n / 10) + '0');
-		_putchar((n % 10) + '0');
-	}
-	else if (n < 10)
-	{
-		_putchar(n + '0');
+		if (n < 0)
+		{
+			k = -n;
+			_putchar('-');
+		}
+		else
+		{
+			k = n;
+		}
+		m = 1000000000;
+		do {
+			if (k >= m)
+			{
+				_putchar((k / m % 10) + '0');
+			}
+			m /= 10;
+		} while (m != 0);
 	}
 }
