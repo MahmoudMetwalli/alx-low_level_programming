@@ -29,9 +29,9 @@ char *_strstr(char *haystack, char *needle)
 		{
 			l = 0;
 		}
-		if (l == i - 1)
+		if (l == i)
 		{
-			return (haystack + (k - l));
+			return (haystack + ((k + 1) - l));
 		}
 	}
 	return (0);
