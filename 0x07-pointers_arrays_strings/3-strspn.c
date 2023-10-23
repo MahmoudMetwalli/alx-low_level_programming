@@ -22,9 +22,9 @@ unsigned int _strspn(char *s, char *accept)
 	{
 		l++;
 	}
-	for (i = 0; i <= k; i++)
+	for (i = 0; i < k; i++)
 	{
-		for (j = 0; j <= l; j++)
+		for (j = 0; j < l; j++)
 		{
 			if (s[i] == accept[j])
 			{
