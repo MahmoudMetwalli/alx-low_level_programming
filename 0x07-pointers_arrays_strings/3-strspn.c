@@ -24,6 +24,10 @@ unsigned int _strspn(char *s, char *accept)
 	}
 	for (i = 0; i < k; i++)
 	{
+		if (s[i] < 97 && s[i] > 122 && s[i] < 65 && s[i] > 90)
+		{
+			break;
+		}
 		for (j = 0; j < l; j++)
 		{
 			if (s[i] == accept[j])
