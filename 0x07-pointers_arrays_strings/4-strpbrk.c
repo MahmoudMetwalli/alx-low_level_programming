@@ -24,6 +24,10 @@ char *_strpbrk(char *s, char *accept)
 			else
 			p = '\0';
 		}
+		if (p == (s + i))
+                        {
+                                break;
+                        }
 	}
 	return (p);
 }
