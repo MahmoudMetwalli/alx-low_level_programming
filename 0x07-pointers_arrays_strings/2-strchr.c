@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stddef.h>
 
 
 /**
@@ -14,7 +15,7 @@ char *_strchr(char *s, char c)
 
 	if (*s == '\0')
 	{
-		p = '\0';
+		return (NULL);
 	}
 	else
 	{
@@ -24,12 +25,8 @@ char *_strchr(char *s, char c)
 			{
 				p = s + i;
 				break;
-			}
-			else
-			{
-				p = '\0';
+				return (p);
 			}
 		}
 	}
-	return (p);
 }
