@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "main.h"
 
 /**
@@ -9,15 +10,17 @@
  */
 int main(int argc, char *argv[])
 {
-int i;
+int i, mul = 1;
 
-void(argc);
-if (argv[1] == '\0' || argv[2] == 2)
+if (argc < 3)
 {
-printf("Error");
+printf("Error\n");
 return (1);
 }
-i = atoi(argv[1]) * atoi(argv[2]);
-printf("%d\n", i);
+for (i = 1; i < argc; i++)
+{
+mul *= atoi(argv[i]);
+}
+printf("%d\n", mul);
 return (0);
 }
