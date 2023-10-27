@@ -10,6 +10,9 @@
  */
 int main(int argc, char *argv[])
 {
-    printf("%s\n", argv[0]); /*prints program name*/
-    return (0);              /*ends the program*/
+    if (argc > 0)
+    {
+        printf("%s\n", argv[0]); /*prints program name*/
+        return (0);              /*ends the program*/
+    }
 }
