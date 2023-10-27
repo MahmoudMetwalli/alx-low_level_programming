@@ -9,7 +9,7 @@
  */
 int main(int argc, char *argv[])
 {
-(void)*argv;
-printf("%d\n", argc);
-return (0);
+(void)*argv;/*not used variable*/
+printf("%d\n", argc - 1);/*prints num of arguemnts passed*/
+return (0);/*return 0*/
 }
