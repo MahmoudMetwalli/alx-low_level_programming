@@ -10,9 +10,7 @@
  */
 int main(int argc, char *argv[])
 {
-    if (argc > 0)
-    {
-        printf("%s\n", argv[0]); /*prints program name*/
-        return (0);              /*ends the program*/
-    }
+    (void)argc;              /*parameter not used*/
+    printf("%s\n", argv[0]); /*prints program name*/
+    return (0);              /*ends the program*/
 }
