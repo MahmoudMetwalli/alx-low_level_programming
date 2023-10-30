@@ -21,5 +21,9 @@ char *create_array(unsigned int size, char c)
 	{
 		ac[i] = c;
 	}
+	if (ac == '\0')
+	{
+		return (0);
+	}
 	return (ac);
 }
