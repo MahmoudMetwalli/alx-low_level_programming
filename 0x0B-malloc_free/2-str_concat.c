@@ -12,6 +12,10 @@ char *str_concat(char *s1, char *s2)
 	char *ss;
 	int i, j, a, b;
 
+	if (s1 == 0)
+		s1 = "";
+	if (s2 == 0)
+		s2 = "";
 	i = 0;
 	while (s1[i] != '\0')
 	{
