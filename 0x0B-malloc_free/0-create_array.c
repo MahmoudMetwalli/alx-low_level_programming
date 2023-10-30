@@ -17,9 +17,17 @@ char *create_array(unsigned int size, char c)
 		return (0);
 	}
 	ac = malloc(size * sizeof(char));
+	if (ac != 0)
+	{
 	for (i = 0; i < size; i++)
 	{
 		ac[i] = c;
 	}
 	return (ac);
+	}
+	else
+	{
+		return (0);
+	}
 }
+
