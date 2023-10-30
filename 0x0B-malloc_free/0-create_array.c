@@ -17,7 +17,7 @@ char *create_array(unsigned int size, char c)
 		return (0);
 	}
 	ac = malloc(size * sizeof(char));
-	if (ac != 0)
+	if (ac != 0)/*to check for malloc failure*/
 	{
 	for (i = 0; i < size; i++)
 	{
@@ -30,4 +30,3 @@ char *create_array(unsigned int size, char c)
 		return (0);
 	}
 }
-
