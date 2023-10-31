@@ -8,35 +8,36 @@
  */
 char **strtow(char *str)
 {
-	char **d;
-	int i;
-	int j = 0;
-	int con = 0;
+	int i = 0, j = 1, k = 0, l, m;
+	char **s;
 
-	if (str == NULL)
-		return (NULL);
-
-	for (i = 0; str[i] != '\0'; i++)
+	if (str == 0 || *str == 0)
 	{
-		if (str[i] != 32)
-			con++;
+		return (0);
 	}
-
-	d = malloc(sizeof(char) * con);
-
-	if (d == NULL)
-		return (NULL);
-
-	for (i = 0; str[i] != '\0'; i++)
+	while (str[i] != '\0')
 	{
-		if (str[i] != 32)
+		if (str[i] == ' ' && str[(i - 1)] != ' ')
 		{
-			*d[j] = str[i];
 			j++;
 		}
-		else
+		i++;
+	}
+	s = malloc(sizeof(char *) * j);
+	if (s == 0)
+	{
+		return (0);
+	}
+	for (l = 0; l < j; l++)
+	{
+		m = 0;
+		while (str[k] == ' ' && str[(k - 1)] != ' ' || k < i)
 		{
+			s[l][m] = str[k];
+			m++;
+			k++;
 		}
 	}
-	return (d);
+	s[l][(m + 1)] = '\0';
+	return (s);
 }
