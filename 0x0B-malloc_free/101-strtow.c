@@ -11,13 +11,13 @@ char **strtow(char *str)
 	int i = 0, j = 1, k = 0, l, m;
 	char **s;
 
-	if (str == 0 || str == "")
+	if (str == 0 || str == '')
 	{
 		return (0);
 	}
 	while (str[i] != '\0')
 	{
-		if (str[i] == " " && str[(i - 1)] != " ")
+		if (str[i] == ' ' && str[(i - 1)] != ' ')
 		{
 			j++;
 		}
@@ -31,7 +31,7 @@ char **strtow(char *str)
 	for (l = 0; l < j; l++)
 	{
 		m = 0;
-		while (str[k] == " " && str[(k - 1)] != " " || k < i)
+		while (str[k] == '' && str[(k - 1)] != '' || k < i)
 		{
 			s[l][m] = str[k];
 			m++;
