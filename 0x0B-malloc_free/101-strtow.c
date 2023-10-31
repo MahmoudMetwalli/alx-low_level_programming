@@ -2,9 +2,10 @@
 #include <stdlib.h>
 
 /**
- * strtow - splits a string into words
- * @str: string to be splitted
- * Return: pointer to arrays or null
+ * number - function to calculate number of words
+ * @str: string being passed to check for words
+ *
+ * Return: number of words
  */
 int number(char *str)
 {
