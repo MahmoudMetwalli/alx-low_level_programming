@@ -9,7 +9,7 @@
  */
 char *argstostr(int ac, char **av)
 {
-	int i = 0, j = 0, k, c = 0, l = 0, m;
+	int i = 0, j, k, c = 0, l = 0, m;
 	char *ar;
 
 	if (ac == 0 || av == 0)
@@ -18,6 +18,7 @@ char *argstostr(int ac, char **av)
 	}
 	while (i < ac)
 	{
+		j = 0;
 		while (av[i][j] != '\0')
 		{
 			j++;
