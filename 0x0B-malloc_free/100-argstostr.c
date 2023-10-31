@@ -9,14 +9,25 @@
  */
 char *argstostr(int ac, char **av)
 {
-	int i, j, k;
+	int i, j, k, c;
 	char **ar;
 
 	if (ac == 0 || av == 0)
 	{
 		return (0);
 	}
-	ar = malloc(sizeof(char *) * ac);
+	i = 0;
+	while (i < ac)
+	{
+		j = 0;
+		while (ar[i][j] != '\0')
+		{
+			j++;
+			c++;
+		}
+		i++;
+	}
+	ar = malloc(sizeof(char) * c);
 	if (ar == 0)
 	{
 		return (0);
