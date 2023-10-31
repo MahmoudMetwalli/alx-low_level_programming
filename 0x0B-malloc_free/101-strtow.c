@@ -31,7 +31,7 @@ char **strtow(char *str)
 	for (l = 0; l < j; l++)
 	{
 		m = 0;
-		while (str[k] == ' ' && str[(k - 1)] != ' ' || k < i)
+		while ((str[k] == ' ' && str[(k - 1)] != ' ') || k < i)
 		{
 			s[l][m] = str[k];
 			m++;
