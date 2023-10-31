@@ -8,7 +8,7 @@
  */
 char **strtow(char *str)
 {
-	int i = 0, j = 1, k = 0, l, m;
+	int i = 0, j = 1, k = 0, l, m, r;
 	char **s;
 
 	if (str == 0 || *str == 0)
@@ -30,8 +30,8 @@ char **strtow(char *str)
 	}
 	for (l = 0; l < j; l++)
 	{
-		for (f = 0; s[l][f] != '\0'; f++)
-		s[l] = malloc(sizeof(char) * f);
+		for (r = 0; s[l][r] != '\0'; r++)
+		s[l] = malloc(sizeof(char) * r);
 		m = 0;
 		while ((str[k] == ' ' && str[(k - 1)] != ' ') || k < i)
 		{
