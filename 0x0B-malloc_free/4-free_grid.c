@@ -6,7 +6,7 @@
  * @grid: 2D grid
  * @height: hight of grid
  */
-free_grid(int **grid, int height)
+void free_grid(int **grid, int height)
 {
 	int i;
 
