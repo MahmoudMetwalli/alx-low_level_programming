@@ -27,7 +27,7 @@ unsigned int strnl(char *s)
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int l, k, m = 0, h = 0;
+	unsigned int l, m = 0, h = 0;
 	char *p;
 
 	if (s1 == NULL)
@@ -39,15 +39,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		s2 = "";
 	}
 	l = strnl(s1);
-	k = strnl(s2);
-	if (n >= k)
-	{
-		n = k;
-	}
 	p = malloc((sizeof(*p) * (l + n)) + 1);
 	if (p == NULL)
 	{
-		return (0);
+		return (NULL);
 	}
 	while (m < (l + n) && s1[m] != '\0')
 	{
