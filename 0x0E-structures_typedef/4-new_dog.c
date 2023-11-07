@@ -26,7 +26,6 @@ unsigned int strnl(char *s)
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *d;
-	char *n, *o;
 	int a, b, i, j;
 
 	d = malloc(sizeof(dog_t));
@@ -34,24 +33,29 @@ dog_t *new_dog(char *name, float age, char *owner)
 	{
 		return (NULL);
 	}
-	d->name = name;
-	d->age = age;
-	d->owner = owner;
 	a = strnl(name);
-	b = strnl(owner);
-	n = malloc(sizeof(char) * a);
-	o = malloc(sizeof(char) * b);
-	if (n == NULL || o == NULL)
+	d->name = malloc(sizeof(char) * (a + 1));
+	if (d->name == NULL)
 	{
+		free(d);
 		return (NULL);
 	}
-	for (i = 0; i < a; i++)
+	for (i = 0; i <= a; i++)
 	{
-		n[i] = name[i];
+		d->name[i] = name[i];
 	}
-	for (j = 0; j < b; j++)
+	d->age = age;
+	b = strnl(owner);
+	d->owner = malloc(sizeof(char) * (b + 1));
+	if (d->owner == NULL)
 	{
-		o[j] = owner[j];
+		free(d->name);
+		free(d);
+		return (NULL);
+	}
+	for (j = 0; j <= b; j++)
+	{
+		d->owner[j] = owner[j];
 	}
 	return (d);
 }
