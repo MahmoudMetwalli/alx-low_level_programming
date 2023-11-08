@@ -27,5 +27,5 @@ int main(int argc, char **argv)
 	b = atoi(argv[3]);
 	c = oprt(a, b);
 	printf("%i\n", c);
-	return (c);
+	return (0);
 }
