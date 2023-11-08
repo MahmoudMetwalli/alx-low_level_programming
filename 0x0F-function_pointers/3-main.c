@@ -21,7 +21,7 @@ int main(int argc, char **argv)
 	if (oprt == NULL)
 	{
 		printf("Error\n");
-		exit(100);
+		exit(99);
 	}
 	a = atoi(argv[1]);
 	b = atoi(argv[3]);
