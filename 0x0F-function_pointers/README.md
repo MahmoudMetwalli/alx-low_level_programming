@@ -1,0 +1,1 @@
+This a pointer to a function.
