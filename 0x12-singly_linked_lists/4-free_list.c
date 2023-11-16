@@ -17,8 +17,6 @@ void free_list(list_t *head)
 			head = head->next;
 			if (crnt->str)
 				free(crnt->str);
-			if (crnt->next)
-				free(crnt->next);
 			if (crnt)
 				free(crnt);
 		}
