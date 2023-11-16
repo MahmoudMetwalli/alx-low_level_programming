@@ -15,15 +15,17 @@ void free_list(list_t *head)
 		{
 			crnt = head;
 			head = head->next;
-			free(crnt->str);
-			free(crnt->next);
-			free(crnt);
+			if (crnt->str)
+				free(crnt->str);
+			if (crnt->next)
+				free(crnt->next);
+			if (crnt)
+				free(crnt);
 		}
-		free(crnt->str);
-		free(crnt->next);
-		free(crnt);
-		free(head->str);
-		free(head->next);
+		if (head->str)
+			free(head->str);
+		if (head->next)
+			free(head->next);
 		free(head);
 	}
 }
