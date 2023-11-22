@@ -15,11 +15,13 @@ size_t print_listint_safe(const listint_t *head)
 		{
 			return (1 + print_listint_safe(head->next));
 		}
-		else
+		else if (head->next > head)
 		{
 			printf("-> [%p] %d\n", (void *)head->next, head->next->n);
 			return (1);
 		}
+		else
+			exit(98);
 	}
 	return (0);
 }
