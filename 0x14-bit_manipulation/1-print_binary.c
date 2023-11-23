@@ -8,7 +8,7 @@ void print_binary(unsigned long int n)
 {
 	int i, slot, start = 0;
 
-	for (slot = 31; slot >= 0; slot--)
+	for (slot = sizeof(n) * 8 - 1; slot >= 0; slot--)
 	{
 		i = ((n >> slot) & 1);
 		if (i == 1)
