@@ -81,5 +81,5 @@ int main(int argc, char **argv)
 		dprintf(2, "Error: Can't close fd %d", fd_to);
 		exit(100);
 	}
-	return (1);
+	return (0);
 }
