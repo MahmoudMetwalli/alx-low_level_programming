@@ -17,7 +17,7 @@ size_t read_textfile(const char *filename, size_t letters)
 	buff = (char *)malloc(sizeof(char) * letters);
 	if (!buff)
 		return (0);
-	if (!filename)
+	if (!filename || !letters)
 		return (0);
 	if (fd == -1)
 		return (0);
@@ -25,7 +25,7 @@ size_t read_textfile(const char *filename, size_t letters)
 	if (num1 == -1)
 		return (0);
 	num2 = write(1, buff, num1);
-	if (num2 == -1)
+	if (num2 != num1)
 		return (0);
 	close(fd);
 	return (num2);
