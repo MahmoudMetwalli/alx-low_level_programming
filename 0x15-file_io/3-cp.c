@@ -65,7 +65,7 @@ int main(int argc, char **argv)
 	flag = close(fd_to);
 	if (flag == -1)
 	{
-		dprintf(2, "Error: Can't close fd %d", fd_from);
+		dprintf(2, "Error: Can't close fd %d", fd_to);
 		exit(100);
 	}
 	return (0);
