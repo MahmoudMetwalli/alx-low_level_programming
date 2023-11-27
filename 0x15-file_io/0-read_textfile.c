@@ -28,5 +28,5 @@ size_t read_textfile(const char *filename, size_t letters)
 	if (num2 != num1)
 		return (0);
 	close(fd);
-	return (num2);
+	return (num1);
 }
