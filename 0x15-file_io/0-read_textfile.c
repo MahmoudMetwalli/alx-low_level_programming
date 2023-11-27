@@ -24,7 +24,7 @@ size_t read_textfile(const char *filename, size_t letters)
 	num1 = read(fd, buff, letters);
 	if (num1 == -1)
 		return (0);
-	num2 = write(1, buff, num1);
+	num2 = write(STDOUT_FILENO, buff, num1);
 	if (num2 != num1)
 		return (0);
 	close(fd);
