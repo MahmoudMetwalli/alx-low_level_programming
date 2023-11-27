@@ -4,6 +4,40 @@
 #include <unistd.h>
 #include <stdlib.h>
 /**
+ * copy - copy files
+ * @fd_from: first file discreptor
+ * @fd_to: second file discreptor
+ * @f_from: first file name
+ * @f_to: second file name
+ */
+void copy(int fd_from, int fd_to, char *f_from, char *f_to)
+{
+	int printed, flag;
+	char *buff[1024];
+
+	printed = read(fd_from, buff, 1024);
+	if (printed == -1)
+	{
+		dprintf(2, "Error: Can't read from file %s\n", f_from);
+		exit(98);
+	}
+	while (printed)
+	{
+		flag = write(fd_to, buff, printed);
+		if (flag == -1)
+		{
+			dprintf(2, "Error: Can't write to %s\n", f_to);
+			exit(99);
+		}
+		printed = read(fd_from, buff, 1024);
+		if (printed == -1)
+		{
+			dprintf(2, "Error: Can't read from file %s\n", f_from);
+			exit(98);
+		}
+	}
+}
+/**
  * main - copies from one file to another
  * @argc: num of arguments
  * @argv: value of arguments
@@ -11,8 +45,7 @@
  */
 int main(int argc, char **argv)
 {
-	int fd_from, fd_to, printed, flag = 0;
-	char *buff[1024];
+	int fd_from, fd_to, flag = 0;
 
 	if (argc != 3)
 	{
@@ -35,27 +68,7 @@ int main(int argc, char **argv)
 			exit(99);
 		}
 	}
-	printed = read(fd_from, buff, 1024);
-	if (printed == -1)
-	{
-		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
-		exit(98);
-	}
-	while (printed)
-	{
-		flag = write(fd_to, buff, printed);
-		if (flag == -1)
-		{
-			dprintf(2, "Error: Can't write to %s\n", argv[2]);
-			exit(99);
-		}
-		printed = read(fd_from, buff, 1024);
-		if (printed == -1)
-		{
-			dprintf(2, "Error: Can't read from file %s\n", argv[1]);
-			exit(98);
-		}
-	}
+	copy(fd_from, fd_to, argv[1], argv[2]);
 	flag = close(fd_from);
 	if (flag == -1)
 	{
