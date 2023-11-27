@@ -12,7 +12,7 @@ size_t read_textfile(const char *filename, size_t letters)
 {
 	int fd = open(filename, O_RDONLY);
 	char *buff;
-	size_t num_of_bytes;
+	size_t num1, num2;
 
 	buff = (char *)malloc(sizeof(char) * letters);
 	if (!buff)
@@ -21,12 +21,14 @@ size_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	if (fd == -1)
 		return (0);
-	num_of_bytes = read(fd, buff, letters);
-	if (num_of_bytes == 0)
+	num1 = read(fd, buff, letters);
+	if (num1 == 0)
 		return (0);
-	num_of_bytes = write(1, buff, letters);
-	if (num_of_bytes != letters)
+	buff[num1] = '\0';
+	num1 += 1;
+	num2 = write(1, buff, num1);
+	if (num2 != num1)
 		return (0);
 	close(fd);
-	return (num_of_bytes);
+	return (num2);
 }
