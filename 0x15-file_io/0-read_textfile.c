@@ -10,16 +10,16 @@
  */
 size_t read_textfile(const char *filename, size_t letters)
 {
-	int fd = open(filename, O_RDONLY);
 	char *buff;
-	int num1, num2;
+	int fd, num1, num2;
 
+	fd = open(filename, O_RDONLY);
+	if (fd == -1)
+		return (0);
 	buff = (char *)malloc(sizeof(char) * letters);
 	if (!buff)
 		return (0);
 	if (!filename)
-		return (0);
-	if (fd == -1)
 		return (0);
 	num1 = read(fd, buff, letters);
 	if (num1 == -1)
@@ -28,5 +28,5 @@ size_t read_textfile(const char *filename, size_t letters)
 	if (num2 != num1)
 		return (0);
 	close(fd);
-	return (num1);
+	return (num2);
 }
