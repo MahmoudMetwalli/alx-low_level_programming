@@ -71,16 +71,16 @@ int main(int argc, char **argv)
 		}
 	}
 	copy(fd_from, fd_to, argv[1], argv[2]);
-	flag = close(fd_from);
-	if (flag == -1)
-	{
-		dprintf(2, "Error: Can't close fd %d", fd_from);
-		exit(100);
-	}
 	flag = close(fd_to);
 	if (flag == -1)
 	{
 		dprintf(2, "Error: Can't close fd %d", fd_to);
+		exit(100);
+	}
+	flag = close(fd_from);
+	if (flag == -1)
+	{
+		dprintf(2, "Error: Can't close fd %d", fd_from);
 		exit(100);
 	}
 	return (0);
