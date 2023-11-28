@@ -74,15 +74,11 @@ int main(int argc, char **argv)
 		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
-	fd_to = open(argv[2], O_WRONLY | O_TRUNC);
+	fd_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (fd_to == -1)
 	{
-		fd_to = open(argv[2], O_CREAT | O_WRONLY, 0664);
-		if (fd_to == -1)
-		{
-			dprintf(2, "Error: Can't write to %s\n", argv[2]);
-			exit(99);
-		}
+		dprintf(2, "Error: Can't write to %s\n", argv[2]);
+		exit(99);
 	}
 	copy(fd_from, fd_to, argv[1], argv[2]);
 	close_file_d(fd_from);
