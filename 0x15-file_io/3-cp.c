@@ -61,7 +61,7 @@ void close_file_d(int fd)
  */
 int main(int argc, char **argv)
 {
-	int fd_from, fd_to, flag = 0;
+	int fd_from, fd_to;
 
 	if (argc != 3)
 	{
