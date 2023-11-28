@@ -72,13 +72,13 @@ int main(int argc, char **argv)
 	flag = close(fd_to);
 	if (flag == -1)
 	{
-		dprintf(2, "Error: Can't close fd %d", fd_to);
+		dprintf(2, "Error: Can't close fd %d\n", fd_to);
 		exit(100);
 	}
 	flag = close(fd_from);
 	if (flag == -1)
 	{
-		dprintf(2, "Error: Can't close fd %d", fd_from);
+		dprintf(2, "Error: Can't close fd %d\n", fd_from);
 		exit(100);
 	}
 	return (0);
