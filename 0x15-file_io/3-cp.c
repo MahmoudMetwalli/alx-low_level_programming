@@ -52,8 +52,11 @@ int main(int argc, char **argv)
 		dprintf(2, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	if (argv[1] == argv[2])
-		return (0);
+	if (!argv[1] || !argv[2])
+	{
+		dprintf(2, "Usage: cp file_from file_to\n");
+		exit(97);
+	}
 	fd_from = open(argv[1], O_RDONLY);
 	if (fd_from == -1)
 	{
