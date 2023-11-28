@@ -23,7 +23,6 @@ void copy(int fd_from, int fd_to, char *f_from, char *f_to)
 	}
 	while (printed)
 	{
-		buff[printed] = '\0';
 		flag = write(fd_to, buff, printed);
 		if (flag == -1)
 		{
