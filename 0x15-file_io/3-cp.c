@@ -24,7 +24,7 @@ void copy(int fd_from, int fd_to, char *f_from, char *f_to)
 	while (printed)
 	{
 		flag = write(fd_to, buff, printed);
-		if (flag == -1)
+		if (flag != printed)
 		{
 			dprintf(2, "Error: Can't write to %s\n", f_to);
 			exit(99);
