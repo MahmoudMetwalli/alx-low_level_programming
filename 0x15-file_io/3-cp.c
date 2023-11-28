@@ -21,7 +21,7 @@ void copy(int fd_from, int fd_to, char *f_from, char *f_to)
 		dprintf(2, "Error: Can't read from file %s\n", f_from);
 		exit(98);
 	}
-	while (printed)
+	while (printed > 0)
 	{
 		flag = write(fd_to, buff, printed);
 		if (flag != printed)
