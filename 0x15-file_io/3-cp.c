@@ -38,6 +38,22 @@ void copy(int fd_from, int fd_to, char *f_from, char *f_to)
 	}
 }
 /**
+ * close_file_d - closes files
+ * @fd: file discreptor to be closed
+ */
+void close_file_d(int fd)
+{
+	int flag;
+
+	flag = close(fd);
+	if (flag == -1)
+	{
+		dprintf(2, "Error: Can't close fd %d\n", fd);
+		exit(100);
+	}
+}
+
+/**
  * main - copies from one file to another
  * @argc: num of arguments
  * @argv: value of arguments
@@ -69,17 +85,7 @@ int main(int argc, char **argv)
 		}
 	}
 	copy(fd_from, fd_to, argv[1], argv[2]);
-	flag = close(fd_to);
-	if (flag == -1)
-	{
-		dprintf(2, "Error: Can't close fd %d\n", fd_to);
-		exit(100);
-	}
-	flag = close(fd_from);
-	if (flag == -1)
-	{
-		dprintf(2, "Error: Can't close fd %d\n", fd_from);
-		exit(100);
-	}
+	close_file_d(fd_from);
+	close_file_d(fd_to);
 	return (0);
 }
