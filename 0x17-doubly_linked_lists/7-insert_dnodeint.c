@@ -13,7 +13,8 @@ void assign(dlistint_t **currp, dlistint_t **currn, dlistint_t **new, int *n)
 		(*new)->n = *n;
 		(*currp)->next = *new;
 		(*new)->next = *currn;
-		(*currn)->prev = *new;
+		if (*currn)
+			(*currn)->prev = *new;
 		(*new)->prev = *currp;
 }
 /**
