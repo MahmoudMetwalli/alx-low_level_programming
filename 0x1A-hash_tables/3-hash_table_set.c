@@ -18,7 +18,7 @@ hash_node_t *add_node(hash_node_t **head, char **key, char **value)
 	if (current && !strcmp(current->key, *key))
 	{
 		current->value = *value;
-		free(key);
+		free(*key);
 		return (*head);
 	}
 	new = (hash_node_t *)malloc(sizeof(hash_node_t));
