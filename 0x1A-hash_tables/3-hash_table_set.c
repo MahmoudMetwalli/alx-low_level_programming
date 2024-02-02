@@ -6,7 +6,7 @@
  * @value: value
  * Return: address of new element
  */
-hash_node_t *add_node(hash_node_t *head, char *key, char *value)
+hash_node_t *add_node(hash_node_t **head, char *key, char *value)
 {
 	hash_node_t *new;
 
@@ -17,9 +17,9 @@ hash_node_t *add_node(hash_node_t *head, char *key, char *value)
 	}
 	new->key = key;
 	new->value = value;
-	new->next = head;
-	head = new;
-	return (head);
+	new->next = *head;
+	*head = new;
+	return (*head);
 }
 /**
  * hash_table_set - adds an element to the hash table
@@ -48,6 +48,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	new = malloc(sizeof(hash_node_t));
 	if (!new)
 		return (0);
-	add_node(ht->array[index], key_2, value_2);
+	add_node(&ht->array[index], key_2, value_2);
 	return (1);
 }
