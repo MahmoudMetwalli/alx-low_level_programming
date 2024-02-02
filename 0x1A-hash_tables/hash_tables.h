@@ -85,6 +85,5 @@ void shash_table_print_rev(const shash_table_t *ht);
 void shash_table_delete(shash_table_t *ht);
 int s_set_data(shash_table_t **ht, shash_node_t **hd, char **ky, char **val);
 void sort_list(shash_table_t **ht, shash_node_t **node);
-int str_val_cmp(char *str_a, char *str_b);
 
 #endif

@@ -27,25 +27,6 @@ shash_table_t *shash_table_create(unsigned long int size)
 	return (Hash_T);
 }
 /**
- * str_val_cmp - compares ASCII value of 2 strings
- * @str_a: first string
- * @str_b: second string
- * Return: 1 if first > second and 0 if the opposite
-*/
-int str_val_cmp(char *str_a, char *str_b)
-{
-	while (str_a && str_b)
-	{
-		if (*str_a > *str_b)
-			return (1);
-		else if (*str_a < *str_b)
-			return (0);
-		str_a++;
-		str_b++;
-	}
-	return (0);
-}
-/**
  * sort_list - sorts a list according to key ASCII value
  * @ht: sorted hash table
  * @node: node to be inserted
@@ -61,9 +42,7 @@ void sort_list(shash_table_t **ht, shash_node_t **node)
 		(*ht)->stail = *node;
 		return;
 	}
-	if ((*node)->key[0] == iterate->key[0])
-		return;
-	while (iterate->snext && (str_val_cmp((*node)->key, iterate->key)))
+	while (iterate->snext && ((*node)->key[0] > iterate->key[0]))
 	{
 		iterate = iterate->snext;
 	}
