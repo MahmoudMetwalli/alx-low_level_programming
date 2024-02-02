@@ -15,7 +15,7 @@ hash_node_t *add_node(hash_node_t **head, char **key, char **value)
 	{
 		current = current->next;
 	}
-	if (!strcmp(current->key, *key))
+	if (current && !strcmp(current->key, *key))
 	{
 		current->value = *value;
 		return (*head);
