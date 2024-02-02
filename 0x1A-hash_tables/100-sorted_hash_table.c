@@ -54,12 +54,21 @@ void sort_list(shash_table_t **ht, shash_node_t **node)
 		else
 			(*ht)->shead = *node;
 		iterate->sprev = *node;
-		(*node)->next = iterate;
+		(*node)->snext = iterate;
 		return;
 	}
-	iterate->snext = *node;
-	(*node)->sprev = iterate;
-	(*ht)->stail = *node;
+	if ((*node)->key[0] > iterate->key[0])
+	{
+		iterate->snext = *node;
+		(*node)->sprev = iterate;
+		(*ht)->stail = *node;
+		return;
+	}
+	(*node)->snext = iterate;
+	if ((!iterate->sprev))
+		(*ht)->shead = *node;
+	iterate->sprev = *node;
+	(*ht)->stail = iterate;
 }
 /**
  * s_set_data - adds a new node at the beginning of list
