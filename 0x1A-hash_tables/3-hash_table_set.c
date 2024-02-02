@@ -36,10 +36,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	if (!key)
 		return (0);
-	key_2 = malloc(sizeof(key) + 1);
+	key_2 = malloc(sizeof(key));
 	if (!key_2)
 		return (0);
-	value_2 = malloc(sizeof(value) + 1);
+	value_2 = malloc(sizeof(value));
 	if (!value_2)
 		return (0);
 	strcpy(key_2, key);
