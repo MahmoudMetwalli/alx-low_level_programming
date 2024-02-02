@@ -67,6 +67,9 @@ void sort_list(shash_table_t **ht, shash_node_t **node)
 	(*node)->snext = iterate;
 	if ((!iterate->sprev))
 		(*ht)->shead = *node;
+	else
+		(iterate->sprev)->snext = *node;
+	(*node)->sprev = iterate->sprev;
 	iterate->sprev = *node;
 	(*ht)->stail = iterate;
 }
