@@ -46,6 +46,17 @@ void sort_list(shash_table_t **ht, shash_node_t **node)
 	{
 		iterate = iterate->snext;
 	}
+	if ((*node)->key[0] == iterate->key[0])
+	{
+		if ((*node)->key[1] && iterate->key[1])
+		{
+			while (iterate->snext && ((*node)->key[1] > iterate->key[1]))
+			{
+				iterate = iterate->snext;
+			}
+		}
+		return;
+	}
 	if (iterate->snext)
 	{
 		(*node)->sprev = iterate->sprev;
