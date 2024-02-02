@@ -17,6 +17,7 @@ hash_node_t *add_node(hash_node_t **head, char **key, char **value)
 	}
 	if (current && !strcmp(current->key, *key))
 	{
+		free(current->value);
 		current->value = *value;
 		free(*key);
 		return (*head);
