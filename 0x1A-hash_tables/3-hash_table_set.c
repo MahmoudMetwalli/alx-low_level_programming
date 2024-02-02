@@ -8,8 +8,18 @@
  */
 hash_node_t *add_node(hash_node_t **head, char **key, char **value)
 {
-	hash_node_t *new;
+	hash_node_t *new, *current;
 
+	current = *head;
+	while (current && strcmp(current->key, *key))
+	{
+		current = current->next;
+	}
+	if (!strcmp(current->key, *key))
+	{
+		current->value = *value;
+		return (*head);
+	}
 	new = (hash_node_t *)malloc(sizeof(hash_node_t));
 	if (!new)
 	{
