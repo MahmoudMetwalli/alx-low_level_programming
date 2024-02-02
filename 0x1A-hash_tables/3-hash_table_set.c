@@ -43,7 +43,6 @@ hash_node_t *add_node(hash_node_t **head, char **key, char **value)
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int index;
-	hash_node_t *new;
 	char *key_2, *value_2;
 
 	if (!strlen(key) || !key || !ht)
@@ -57,9 +56,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	strcpy(key_2, key);
 	strcpy(value_2, value);
 	index = key_index((unsigned char *)key_2, ht->size);
-	new = malloc(sizeof(hash_node_t));
-	if (!new)
-		return (0);
 	add_node(&ht->array[index], &key_2, &value_2);
 	return (1);
 }
