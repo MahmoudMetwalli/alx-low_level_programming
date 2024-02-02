@@ -42,7 +42,7 @@ void sort_list(shash_table_t **ht, shash_node_t **node)
 		(*ht)->stail = *node;
 		return;
 	}
-	while (iterate->snext && ((*node)->key[0] > iterate->key[0]))
+	while (iterate->snext && (strcmp((*node)->key, iterate->key) >= 0))
 	{
 		iterate = iterate->snext;
 	}
@@ -57,7 +57,7 @@ void sort_list(shash_table_t **ht, shash_node_t **node)
 		(*node)->snext = iterate;
 		return;
 	}
-	if ((*node)->key[0] > iterate->key[0])
+	if ((strcmp((*node)->key, iterate->key) >= 0))
 	{
 		iterate->snext = *node;
 		(*node)->sprev = iterate;
