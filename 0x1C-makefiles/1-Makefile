@@ -8,7 +8,7 @@ all: school
 school: main.c school.o
 	${CC} main.o school.o -o school
 
-main.o school.o: main.c school.c
+main.o school.o: ${SRC}
 	${CC} ${SRC} -c
 
 clean:
