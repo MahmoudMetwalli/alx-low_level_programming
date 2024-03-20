@@ -11,6 +11,3 @@ school: ${OBJ}
 
 main.o school.o: ${SRC}
 	${CC} ${SRC} -c
-
-clean:
-	rm *.o ${NAME}
