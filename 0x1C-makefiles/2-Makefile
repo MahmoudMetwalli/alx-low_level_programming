@@ -1,16 +1,17 @@
-.PHONY = all clean
-
+# Variables
 CC = gcc
-SRC = main.c school.c
-OBJ = *.o
+SRC = $(wildcard *.c)
+OBJ = $(SRC:.c=.o)
 NAME = school
-all: ${NAME}
 
-${NAME}: ${OBJ}
-	${CC} ${OBJ} -o ${NAME}
+# Rules
+all: $(NAME)
 
-${OBJ}: ${SRC}
-	${CC} ${SRC} -c
+$(NAME): $(OBJ)
+	$(CC) -o $@ $^
+
+%.o: %.c
+	$(CC) -c $< -o $@
 
 clean:
-	rm *.o ${NAME}
+	rm -f $(OBJ) $(NAME)
