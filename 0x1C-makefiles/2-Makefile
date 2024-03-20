@@ -1,6 +1,17 @@
+.PHONY = all clean
+
 CC = gcc
-SRC = main.c holberton.c
-OBJ = $(SRC:.c=.o)
-NAME = holberton
-all: $(OBJ)
-	$(CC) $(OBJ) -o $(NAME)
+SRC = main.c school.c
+OBJ = *.o
+NAME = school
+
+all: ${NAME}
+
+${NAME}: ${OBJ}
+	${CC} ${OBJ} -o ${NAME}
+
+${OBJ}: ${SRC}
+	${CC} ${SRC} -c
+
+clean:
+	rm *.o ${NAME}
