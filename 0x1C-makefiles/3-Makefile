@@ -1,4 +1,4 @@
-.PHONY = all clean oclean fclean
+.PHONY = all clean oclean fclean re
 # Variables
 CC = gcc
 SRC = main.c school.c
@@ -15,8 +15,8 @@ $(NAME): $(OBJ)
 %.o: %.c
 	$(CC) -c $< -o $@
 
-re:
-	$(CC) $(SRC) -o $(NAME)
+re: oclean all
+
 clean:
 	$(RM) -f *~ $(NAME)
 
