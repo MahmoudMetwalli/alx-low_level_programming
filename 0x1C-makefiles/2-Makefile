@@ -1,13 +1,15 @@
+.PHONY = all clean
+
 CC = gcc
 SRC = main.c school.c
 OBJ = *.o
 NAME = school
 all: ${NAME}
 
-school: ${OBJ}
+${NAME}: ${OBJ}
 	${CC} ${OBJ} -o ${NAME}
 
-main.o school.o: ${SRC}
+${OBJ} ${SRC}
 	${CC} ${SRC} -c
 
 clean:
