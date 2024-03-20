@@ -1,17 +1,6 @@
-.PHONY = all clean
-
 CC = gcc
-SRC = $(wildcard *.c)
+SRC = main.c holberton.c
 OBJ = $(SRC:.c=.o)
-NAME = school
-
-all: ${NAME}
-
-${NAME}: ${OBJ}
-	${CC} ${OBJ} -o ${NAME}
-
-%.o: %.c
-	$(CC) -c $< -o $@
-
-clean:
-	rm *.o ${NAME}
+NAME = holberton
+all: $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
