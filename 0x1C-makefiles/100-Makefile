@@ -4,6 +4,7 @@ CC = gcc
 SRC = main.c school.c
 OBJ = ${SRC:.c=.o}
 NAME = school
+kill = ${RM}
 CFLAGS = -Wall -Werror -Wextra -pedantic
 
 # Rules
@@ -13,9 +14,9 @@ all: m.h ${OBJ}
 re: oclean all
 
 clean:
-	${RM} -f *~ ${NAME}
+	${kill} -f *~ ${NAME}
 
 oclean:
-	${RM} -f ${OBJ}
+	${kill} -f ${OBJ}
 
 fclean: oclean clean
