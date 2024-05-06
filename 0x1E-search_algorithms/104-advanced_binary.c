@@ -7,9 +7,9 @@
  * @value: value of target element
  * Return: index of target element or -1 if faild
 */
-int recursive_binary(int *array, size_t lower, size_t higher, int value)
+int recursive_binary(int *array, int lower, int higher, int value)
 {
-	size_t print, mid;
+	int print, mid;
 
 	if (lower > higher)
 		return (-1);
@@ -22,7 +22,7 @@ int recursive_binary(int *array, size_t lower, size_t higher, int value)
 	mid = lower + ((higher - lower) / 2);
 	if (array[mid] == value)
 	{
-		if (array[mid - 1] == value)
+		if ((mid - 1 >= 0) && array[mid - 1] == value)
 			higher = mid;
 		else
 			return (mid);
@@ -42,7 +42,7 @@ int recursive_binary(int *array, size_t lower, size_t higher, int value)
 */
 int advanced_binary(int *array, size_t size, int value)
 {
-	size_t lower = 0, higher;
+	int lower = 0, higher;
 
 	if (array == NULL || size == 0)
 		return (-1);
