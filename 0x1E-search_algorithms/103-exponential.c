@@ -24,6 +24,7 @@ int exponential_search(int *array, size_t size, int value)
 		higher = size - 1;
 	else
 		higher = expo;
+	printf("Value found between indexes [%ld] and [%ld]\n", lower, higher);
 	while (lower <= higher)
 	{
 		printf("Searching in array: ");
