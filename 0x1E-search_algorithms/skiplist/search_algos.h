@@ -48,7 +48,5 @@ listint_t *jump_list(listint_t *list, size_t size, int value);
 listint_t *iterate_list(listint_t *start, size_t steps);
 listint_t *iterate_list_after(listint_t *start, size_t steps);
 skiplist_t *linear_skip(skiplist_t *list, int value);
-skiplist_t *iterate_list_after_skip(skiplist_t *start, size_t steps);
-
 
 #endif
