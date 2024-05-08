@@ -18,9 +18,8 @@ skiplist_t *iterate_list_after_skip(skiplist_t *start, size_t steps)
 	return (end);
 }
 /**
- * jump_list - utilizes jump search algorithm to find element
+ * linear_skip - utilizes jump search algorithm to find element
  * @list: list to be searched
- * @size: size of list
  * @value: value of target element
  * Return: target element or NULL if faild
  */
